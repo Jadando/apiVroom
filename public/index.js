@@ -5,8 +5,6 @@ const port = process.env.PORT || 3000;
 app.use(express.json());
 
 app.post('/api/enviarDados', (req, res) => {
-  const esquemaDoExpo = 'vroom';
-  const rota = 'rota';
   // Recupera os valores do corpo da requisição
   const { nomeEmpresa, endereco, comanda, pagamento, valor, status } = req.body;
 
