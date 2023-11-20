@@ -20,7 +20,7 @@
       initialize the SDK after all desired features are loaded, set useEmulator to false
       to avoid connecting the SDK to running emulators.
     -->
-  <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+  <script defer src="/__/firebase/init.js?useEmulator=false"></script>
 
   <script>
     // Função para extrair parâmetros da URL
@@ -49,7 +49,7 @@
         console.log("Pagamento:", pagamento);
         console.log("Valor:", valor);
         console.log("Status:", status);
-        var scheme = "vroom://rota?empresa=" + nomeEmpresa +
+        var scheme = "vroom://?empresa=" + nomeEmpresa +
           "&endereco=" + endereco +
           "&comanda=" + comanda +
           "&pagamento=" + pagamento +
