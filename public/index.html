@@ -26,38 +26,42 @@
     // Função para extrair parâmetros da URL
     function extrairParametrosDaURL() {
       var url = window.location.href;
-      // Expressão regular para extrair os valores
-      var regex = /\/([^\/]+)\/([^\/]+)\/([^\/]+)\/([^\/]+)\/([^\/]+)\/([^\/]+)/;
 
+      // Expressão regular para extrair os valores
+      var regex = /\/vroom-401401\.firebaseapp\.com\/([^\/]+)\/([^\/]+)\/([^\/]+)\/([^\/]+)\/([^\/]+)\/([^\/]+)/;
       // Executar a expressão regular na URL
       var match = url.match(regex);
 
       if (match) {
-        // match[0] contém a string correspondente inteira
-        // match[1], match[2], match[3], match[4], match[5], match[6] contêm os grupos capturados pela expressão regular
         var nomeEmpresa = match[1];
-        var endereco = match[2];
-        var comanda = match[3];
-        var pagamento = match[4];
-        var valor = match[5];
-        var status = match[6];
+        var nomeCliente = match[2];
+        var endereco = match[3];
+        var comanda = match[4];
+        var pagamento = match[5];
+        var valor = match[6];
+        var status = match[7];
 
-        // Imprimir os valores ou fazer o que quiser com eles
         console.log("Nome da Empresa:", nomeEmpresa);
+        console.log("Nome da Cliente:", nomeCliente);
         console.log("Endereço:", endereco);
         console.log("Comanda:", comanda);
         console.log("Pagamento:", pagamento);
         console.log("Valor:", valor);
         console.log("Status:", status);
+
         var scheme = "vroom://?empresa=" + nomeEmpresa +
+          "&cliente=" + nomeCliente +
           "&endereco=" + endereco +
           "&comanda=" + comanda +
           "&pagamento=" + pagamento +
           "&valor=" + valor +
           "&status=" + status;
-          window.location.href = scheme;
+
+        console.log(scheme)
+
+        window.location.href = scheme;
       } else {
-       alert("A URL não corresponde ao padrão esperado.");
+        console.log("A URL não corresponde ao padrão esperado.");
       }
     }
 
@@ -141,7 +145,7 @@
 
 <body>
   <div id="message">
-    <h1>Abrir App React Native Expo com Parâmetro</h1>
+    <h1>Redirecionando...</h1>
   </div>
 </body>
 
